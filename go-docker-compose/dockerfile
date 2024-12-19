@@ -1,0 +1,16 @@
+FROM golang:1.20-alpine
+
+# Çalışma dizinini ayarla
+WORKDIR /app
+
+# Proje dosyalarını kopyala
+COPY . .
+
+# Go uygulamasını derle
+RUN go build -o main .
+
+# Çalıştırılacak portu aç
+EXPOSE 8080
+
+# Derlenmiş binary dosyayı başlat
+CMD ["./main"]
