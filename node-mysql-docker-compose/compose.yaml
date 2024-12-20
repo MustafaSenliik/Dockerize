@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db1
+    ports:
+      - 3308:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=nodeapp
+    restart: always
+    volumes:
+      - db_datas:/var/lib/mysql
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+    networks:
+      - node_network
+
+  app:
+    build: .
+    container_name: nomy-app
+    restart: always
+    ports:
+      - 3003:3003
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: nodeapp
+    volumes:
+      - .:/app
+    networks:
+      - node_network
+    depends_on:
+      - db
+    command: ["sh", "wait-for-it.sh", "db", "3306", "--", "npm", "start"]
+
+volumes:
+  db_datas:
+
+networks:
+  node_network:
+    driver: bridge
