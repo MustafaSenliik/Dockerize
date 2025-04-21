@@ -14,5 +14,5 @@ Her klasör, kendi içinde bağımsız bir örnek içerir ve bir uygulamanın ad
 ├── node-docker-compose/            # Node.js uygulaması için Docker ve Compose dosyaları
 ├── node-mysql-docker-compose/      # Node.js + MySQL birlikte kullanımı (multi-container)
 ├── python-docker-compose/          # Basit bir Python uygulamasının dockerize edilmesi
-├── Kapsamları Notlarım/            # Ortak ya da demo amaçlı örnek compose dosyası
+├── Kapsamları Notlarım/            # Temelden ileri düzeye çıkarılan notlar
 └── .gitattributes                  # Satır sonu uyumluluğu için ayarlar
