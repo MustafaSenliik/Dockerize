@@ -9,7 +9,7 @@ Her klasör, kendi içinde bağımsız bir örnek içerir ve bir uygulamanın ad
 ## 📁 Proje Yapısı
 
 ```bash
-.
+
 ├── go-docker-compose/              # Basit bir Go uygulamasının dockerize edilmesi
 ├── node-docker-compose/            # Node.js uygulaması için Docker ve Compose dosyaları
 ├── node-mysql-docker-compose/      # Node.js + MySQL birlikte kullanımı (multi-container)
